@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Page</title>
+        <link rel="stylesheet" href="style2.css">
+        <!-- <link rel="stylesheet" href="style2.css"> -->
+    </head>
+   
+    <body>
+
+        <div class="main">
+            <header class="header">
+                <a href="#" class="logo"><b>Portfolio</b></a>
+                <nav class="navbar">
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Portfolio</a>
+                    <a href="#">Services</a>
+                    <a href="#">projects</a>
+                    <a href="#">Contact</a>
+                </nav>
+            </header>
+        </div>
+
+        <div class="container">
+            <div class="form-container">
+                <form action="" name="Formfill" onsubmit="return validation()">
+                    <h2>Register Here</h2>
+                    
+                    <div class="input-box">
+                        <input type="text" name="Username" placeholder="Username">
+                    </div>
+                    <span id="Username-error" class="error-message"></span>
+                    
+                    <div class="input-box">
+                        <input type="email" name="Email" placeholder="Email">
+                    </div>
+                    <span id="Email-error" class="error-message"></span>
+         
+                    <div class="input-box">
+                        <input type="password" name="Password" placeholder="Password">
+                    </div>
+                    <span id="Password-error" class="error-message"></span>
+
+                    <div class="input-box">
+                        <input type="password" name="CPassword" placeholder="Confirm Password">
+                    </div>
+                    <span id="CPassword-error" class="error-message"></span>
+                    
+                    <div class="button">
+                        <input type="submit" id="button" onclick="validation()" value="Register">
+                    </div>
+                    <div class="login">
+                        <span>Alreay have an account?</span>
+                        <span><a href="#">login</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <footer>
+            <!-- New added -->
+            <div class="social-logos">
+                
+                <a href="https://instagram.com/hardik_prajapati_official?igshid=YmMyMTA2M2Y="><i class="fa fa-instagram">&nbsp;Instagram</i></a>
+                <a href="https://www.youtube.com/@HardikPrajapatiOfficial"><i class="fa fa-youtube-play">&nbsp;Youtube</i></a>
+                <a href="mailto://211260116056setiit@gmail.com"><i class="fa fa-envelope">&nbsp;Mail</i></a>
+                <a href="mailto://211260116056setiit@gmail.com"><i class="fa fa-facebook-official">&nbsp;Facebook</i></a>
+                <a href="mailto://211260116056setiit@gmail.com"><i class="fa fa-twitter">&nbsp;Twitter</i></a>
+            </div> <!-- New Added Close -->
+            <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 20px;"> Jay Shree Krishna |&nbsp;Contact : +91 9173307640 |&nbsp; Email : 211260116056setiit@gmail.com</p>
+            <span style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 20px;">Created By <a href="https://instagram.com/hardik_prajapati_official?igshid=YmMyMTA2M2Y="> Hardikkk Prajapati </a> | <span
+                    class="far fa-copyright"></span> 2024
+                All rights reserved.</span>
+    
+        </footer>
+    
+        <script src="script.js"></script>
+
+    </body>
+    
+</html>

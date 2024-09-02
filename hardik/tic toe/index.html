@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic toe app</title>
+    <style>
+   
+ #tic-tac-toe-board {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(3, 50px);
+    gap: 5px;
+   
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightgray;
+  font-size: 2em;
+  cursor: pointer;
+}
+h2{
+    margin-left: 40px;
+}
+
+    </style>
+</head>
+<body>
+    <h2>Tic Toe</h2>
+    <div id="tic-tac-toe-board">
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+      </div>
+      <button id="restartButton" style="margin-top: 20px; border-radius: 3px; width: 160px; height: 30px;">Restart</button>
+      
+
+      <script>
+        const cells = document.querySelectorAll('[data-cell]');
+const board = document.getElementById('tic-tac-toe-board');
+const restartButton = document.getElementById('restartButton');
+let currentPlayer = 'X';
+let isGameActive = true;
+const winningCombinations = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6]
+];
+
+function handleClick(e) {
+  const cell = e.target;
+  const currentClass = currentPlayer === 'X' ? 'x' : 'o';
+  if (cell.textContent === '' && isGameActive) {
+    cell.textContent = currentPlayer;
+    if (checkWin(currentPlayer)) {
+      alert(`${currentPlayer} wins!`);
+      isGameActive = false;
+    } else if (isDraw()) {
+      alert('It\'s a draw!');
+      isGameActive = false;
+    } else {
+      swapTurns();
+    }
+  }
+}
+
+function swapTurns() {
+  currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+}
+
+function checkWin(currentPlayer) {
+  return winningCombinations.some(combination => {
+    return combination.every(index => {
+      return cells[index].textContent === currentPlayer;
+    });
+  });
+}
+
+function isDraw() {
+  return [...cells].every(cell => {
+    return cell.textContent === 'X' || cell.textContent === 'O';
+  });
+}
+
+function restartGame() {
+  cells.forEach(cell => {
+    cell.textContent = '';
+  });
+  currentPlayer = 'X';
+  isGameActive = true;
+}
+
+cells.forEach(cell => {
+  cell.addEventListener('click', handleClick);
+});
+
+restartButton.addEventListener('click', restartGame);
+
+      </script>
+</body>
+</html>
